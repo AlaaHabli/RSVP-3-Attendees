@@ -197,7 +197,7 @@ html,body { background:#FAF6EE; font-family:'Tajawal','Arabic Typesetting',Arial
         <div style="font-size:2.5rem;margin-bottom:12px;">✅</div>
         <div id="doneTitle" style="font-family:'Aref Ruqaa',serif;font-size:1.3rem;color:#8B6914;margin-bottom:8px;">تم تسجيل ردك</div>
         <div id="doneMsg" style="font-size:0.85rem;color:#6B5020;opacity:0.8;line-height:1.7;">لقد قمت بتأكيد حضورك مسبقاً.<br>نتطلع لرؤيتك في ليلتنا المباركة</div>
-      <div id="doneQrWrap" style="margin-top:16px;display:none;text-align:center;">
+      <div id="doneQrWrap" style="margin-top:16px;display:none;text-align:center;background:#FFFFFF;padding:20px;border-radius:16px;border:2px solid #C49A3C;">
         <div style="font-family:'Aref Ruqaa',serif;font-size:0.82rem;color:#8B6914;margin-bottom:8px;">رمز دخولك للحفل</div>
         <div id="doneQrCode" style="display:flex;justify-content:center;"></div>
       </div>
@@ -483,8 +483,9 @@ function generateQR(name, phone, type, count) {
     new QRCode(wrap, {
       text: qrData,
       width: 280, height: 280,
-      colorDark: '#3D2E0E',
-      colorLight: '#FDFAF4'
+      colorDark: '#000000',
+      colorLight: '#FFFFFF',
+      correctLevel: QRCode.CorrectLevel.H
     });
     document.getElementById('qrWrap').style.display = 'block';
   }
@@ -499,8 +500,9 @@ function showDoneQR() {
         new QRCode(wrap, {
           text: qrData,
           width: 280, height: 280,
-          colorDark: '#3D2E0E',
-          colorLight: '#FDFAF4'
+          colorDark: '#000000',
+          colorLight: '#FFFFFF',
+          correctLevel: QRCode.CorrectLevel.H
         });
       }
       document.getElementById('doneQrWrap').style.display = 'block';
